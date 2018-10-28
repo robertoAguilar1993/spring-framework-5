@@ -17,13 +17,19 @@ INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Richard'
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Janie', 'Doe', 'janie.doe@gmail.com', '2017-08-16', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Phillip', 'Webb', 'phillip.webb@gmail.com', '2017-08-17', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Stephane', 'Nicoll', 'stephane.nicoll@gmail.com', '2017-08-18', '');
-INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Sam', 'Brannen', 'sam.brannen@gmail.com', '2017-08-19', '');  
-INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Juergen', 'Hoeller', 'juergen.Hoeller@gmail.com', '2017-08-20', ''); 
+INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Juergen', 'Hoeller', 'juergen.Hoeller@gmail.com', '2017-08-20', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Janie', 'Roe', 'janie.roe@gmail.com', '2017-08-21', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('John', 'Smith', 'john.smith@gmail.com', '2017-08-22', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Joe', 'Bloggs', 'joe.bloggs@gmail.com', '2017-08-23', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('John', 'Stiles', 'john.stiles@gmail.com', '2017-08-24', '');
 INSERT INTO clientes (nombre, apellido, email, create_at, foto) VALUES('Richard', 'Roe', 'stiles.roe@gmail.com', '2017-08-25', '');
+
+INSERT INTO users (id, username, password, enabled, ) VALUES (1,'beto', '$2a$10$ltySEH14EsPk66LaXPI8qOE7XHh8/0EnC0l40x8hA3a.AfTV8D.n2', 1);
+INSERT INTO users (id, username, password, enabled, ) VALUES (2,'admin', '$2a$10$47IPCn/Fo1.BV/JARqCX7eONXBcMNXzswcs8.JhdeQkqbpCm4Xsce', 1);
+
+INSERT INTO authorities(user_id, authority) VALUES (1,'ROLE_USER');
+INSERT INTO authorities(user_id, authority) VALUES (2,'ROLE_USER');
+INSERT INTO authorities(user_id, authority) VALUES (2,'ROLE_ADMIN');
 
 /* Populate tabla productos */
 INSERT INTO productos (nombre, precio, create_at) VALUES('Panasonic Pantalla LCD', 259990, NOW());
