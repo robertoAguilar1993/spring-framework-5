@@ -28,15 +28,33 @@
 						<a class="btn btn-outline-primary" th:href="@{/login}">Sign In</a>
 					</li>
 					<li sec:authorize="isAuthenticated()" class="dropdown show">
-						<a class="btn btn-outline btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="btn btn-outline btn-primary dropdown-toggle" href="#" role="button"
+						   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<span sec:authentication="name"></span>
 						</a>
 
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<form id="logoutForm" th:action="@{/logout}" method="post">
 									<button  class="dropdown-item"
-											 onclick="document.getElementById('logoutForm').submit()" type="submit">Sign Out</button>
+											 onclick="document.getElementById('logoutForm').submit()" type="submit">
+										Sign Out</button>
 							</form>
+						</div>
+					</li>
+				</ul>
+				<ul class="navbar-nav navbar-right mx-4">
+					<li class="nav-item mx-1"><a class="btn btn-outline btn-success" th:href="@{/locale(lang=es_ES)}">ES</a> </li>
+					<li class="nav-item mx-1"><a class="btn btn-outline btn-success" th:href="@{/locale(lang=en_US)}">EN</a> </li>
+					<li class="nav-item mx-1"><a class="btn btn-outline btn-success" th:href="@{/locale(lang=de_DE)}">DE</a> </li>
+					<li class="nav-item dropdown show mx-4">
+						<a class="btn btn-outline btn-primary dropdown-toggle" href="#" role="button"
+						   id="dropdownLenguaje" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span th:text="#{text.locale.language}"></span>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownLenguaje">
+							<a class="dropdown-item" th:href="@{/locale(lang=es_ES)}" th:text="#{text.locale.es}">ES</a>
+							<a class="dropdown-item" th:href="@{/locale(lang=en_US)}" th:text="#{text.locale.en}">EN</a>
+							<a class="dropdown-item" th:href="@{/locale(lang=de_DE)}" th:text="#{text.locale.de}">DE</a>
 						</div>
 					</li>
 				</ul>
@@ -56,7 +74,8 @@
 		<hr />
 		<img th:src="@{/images/spring.png}" alt="Spring logo" />
 		<p sec:authorize="isAuthenticated()">
-			Usuario: <span sec:authentication="name"></span> | Roles: <span sec:authentication="principal.authorities"></span>
+			Usuario: <span sec:authentication="name"></span> | Roles: <span sec:authentication="principal.authorities">
+		</span>
 		</p>
 		<p>
 			Powered by <a href="https://projects.spring.io/spring-boot/">Spring
